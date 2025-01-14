@@ -18,8 +18,6 @@ all: nuke dep regenerate build test vet
 
 dep:
 	go install github.com/gogo/protobuf/protoc-gen-gogo
-	go install -v github.com/goccmack/gocc
-	go install -v github.com/awalterschulze/goderive
 
 checklicense:
 	go get github.com/awalterschulze/checklicense
@@ -54,9 +52,7 @@ vet:
 	go vet ./encode/...
 
 regenerate:
-	goderive ./...
 	(cd parser && make regenerate)
-	(cd encode && make regenerate)
 
 clean:
 	go clean ./...
