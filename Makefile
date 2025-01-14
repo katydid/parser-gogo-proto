@@ -22,14 +22,7 @@ dep:
 checklicense:
 	go get github.com/awalterschulze/checklicense
 	checklicense . \
-	person.proto \
-	srctree.proto \
-	puddingmilkshake.proto \
-	taxonomy.proto \
-	treeregister.proto \
-	typewriterprison.proto \
-	proto/tokens/test.proto \
-	parser/debug/debug.proto \
+	debug/debug.proto \
 	doc.go \
 	tools/tools.go \
 	.svg \
