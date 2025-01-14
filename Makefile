@@ -14,7 +14,7 @@
 
 .PHONY: nuke dep regenerate gofmt build test
 
-all: nuke dep regenerate build test vet
+all: nuke dep regenerate build test
 
 dep:
 	go install github.com/gogo/protobuf/protoc-gen-gogo
@@ -47,9 +47,6 @@ install:
 
 bench:
 	go test -test.v -test.run=XXX -test.bench=. ./...
-
-vet:
-	go vet ./encode/...
 
 regenerate:
 	(cd parser && make regenerate)

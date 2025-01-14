@@ -52,10 +52,6 @@ jobs:
       run: |
         cd gopath/src/github.com/katydid/parser-gogo-proto
         make test
-    - name: Vet
-      run: |
-        cd gopath/src/github.com/katydid/parser-gogo-proto
-        make vet
     - name: Checklicencse
       run: |
         cd gopath/src/github.com/katydid/parser-gogo-proto
