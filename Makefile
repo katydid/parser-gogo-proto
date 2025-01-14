@@ -12,9 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-.PHONY: nuke dep regenerate gofmt build test
+.PHONY: dep regenerate gofmt build test
 
-all: nuke dep regenerate build test
+all: dep regenerate build test
 
 dep:
 	go install github.com/gogo/protobuf/protoc-gen-gogo
@@ -49,13 +49,13 @@ bench:
 	go test -test.v -test.run=XXX -test.bench=. ./...
 
 regenerate:
-	(cd parser && make regenerate)
+	(cd proto && make regenerate)
+	(cd debug && make regenerate)
 
 clean:
 	go clean ./...
 
 nuke: clean
-	(cd parser && make nuke)
 	go clean -i ./...
 
 gofmt:

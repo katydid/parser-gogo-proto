@@ -23,9 +23,9 @@ import (
 
 	"github.com/gogo/protobuf/proto"
 	"github.com/gogo/protobuf/protoc-gen-gogo/descriptor"
-	"github.com/katydid/validator-gogo-proto/parser/debug"
-	protoparser "github.com/katydid/validator-gogo-proto/parser/proto"
-	"github.com/katydid/validator-gogo-proto/parser/proto/prototests"
+	"github.com/katydid/parser-gogo-proto/debug"
+	protoparser "github.com/katydid/parser-gogo-proto/proto"
+	"github.com/katydid/parser-gogo-proto/proto/prototests"
 )
 
 func noMerge(data []byte, desc *descriptor.FileDescriptorSet, pkgName, msgName string) error {
