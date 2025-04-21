@@ -26,7 +26,6 @@ jobs:
     - name: Install tools
       run: |
         cd gopath/src/github.com/katydid/parser-gogo-proto
-        go install -x github.com/awalterschulze/checklicense
         go install -x github.com/gogo/protobuf/protoc-gen-gogo
     - name: Setup protoc
       run: |
@@ -53,9 +52,10 @@ jobs:
         cd gopath/src/github.com/katydid/parser-gogo-proto
         make test
     - name: Checklicencse
-      run: |
-        cd gopath/src/github.com/katydid/parser-gogo-proto
-        make checklicense
+      uses: awalterschulze/checklicense@v1.0.6
+      with:
+        path: .
+        ignores: doc.go .svg .txt install_protoc.sh debug/debug.proto
     - name: Diff
       run: |
         cd gopath/src/github.com/katydid/parser-gogo-proto
