@@ -54,7 +54,7 @@ jobs:
     - name: Checklicencse
       uses: awalterschulze/checklicense@v1.0.6
       with:
-        path: .
+        path: gopath/src/github.com/katydid/parser-gogo-proto
         ignores: doc.go .svg .txt install_protoc.sh debug/debug.proto
     - name: Diff
       run: |
